@@ -8,7 +8,7 @@ Summary of the code:
 @author: 
     Gao-zl
 @Time:
-    2020.05.06
+    2020.05.06  v0.1
 """
 import os
 import tqdm
@@ -30,7 +30,7 @@ def rename(path, filename):
     # 有exif信息时
     if FIELD in tags:
         # 改变数据的格式，加上原有的后缀名
-        new_name = str(tags[FIELD]).replace(':', '').replace(' ', '_') \
+        new_name = str(tags[FIELD]).replace(':', '').replace(' ', '_') + '_' + str(current_process)\
                    + os.path.splitext(filename)[1]
         # 生成新的文件按路径
         new_full_file_name = os.path.join(imgpath, new_name)
@@ -53,7 +53,7 @@ def rename(path, filename):
         time_local = time.localtime(mtime)
         time_YmdHMS = time.strftime("%Y%m%d_%H%M%S", time_local)
         # 更新名字
-        new_name_without_exif = str(time_YmdHMS)\
+        new_name_without_exif = str(time_YmdHMS) + '_' + str(current_process)\
                                 + os.path.splitext(filename)[1]
         new_full_file_name_without_exif = os.path.join(imgpath, new_name_without_exif)
 
