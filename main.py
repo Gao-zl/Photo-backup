@@ -9,6 +9,9 @@ Summary of the code:
     Gao-zl
 @Time:
     2020.05.06  v0.1
+    2020.05.07  v0.2
+    2020.05.08  v1.0
+    2020.05.09  v1.1
 """
 import os
 import tqdm
@@ -44,8 +47,10 @@ def rename(path, filename):
             os.rename(old_full_file_name, new_full_file_name)
             # 输出结果
             w.textBrowser.append('[info]%d/%d   Success!   %s--->%s'%(current_process, total, filename, new_name))
+            QApplication.processEvents()
         except Exception as e:
-            w.textBrowser.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
+            w.textBrowser_2.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
+            QApplication.processEvents()
 
 
     # 无exif信息时
@@ -68,8 +73,10 @@ def rename(path, filename):
             # 输出结果
             w.textBrowser.append(
                 '[info]%d/%d   Success!   %s--->%s' % (current_process, total, filename, new_name_without_exif))
+            QApplication.processEvents()
         except Exception as e:
-            w.textBrowser.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
+            w.textBrowser_2.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
+            QApplication.processEvents()
 
 
 '''
@@ -104,9 +111,7 @@ function:
 @time:
     2020.05.08
 '''
-# 定义全局变量
-current_process = 1
-total = 1
+
 class mwindow(QWidget, Ui_Form):
     def __init__(self):
         super(mwindow, self).__init__()
@@ -114,20 +119,30 @@ class mwindow(QWidget, Ui_Form):
 
     # 定义一个输入方法，将输入的信息获取下来
     def click_button(self):
+        self.textBrowser.clear()
+        self.textBrowser_2.clear()
+        self.textBrowser_3.clear()
         global imgpath, current_process, total, filename
+        current_process = 1
+        total = 1
         imgpath = self.lineEdit.text()
         self.textBrowser.append(imgpath)
 
-        total = len([lists for lists in os.listdir(imgpath)])
-        start_time = time.time()
-        for filename in os.listdir(imgpath):
-            full_file_name = os.path.join(imgpath, filename)
-            if os.path.isfile(full_file_name):
-                rename(imgpath, filename)
-                current_process +=1
-        end_time = time.time()
 
-        self.textBrowser.append("程序运行时间：%f"%(end_time-start_time))
+        # 增加纠错机制v1.1
+        try:
+            total = len([lists for lists in os.listdir(imgpath)])
+            start_time = time.time()
+            for filename in os.listdir(imgpath):
+                full_file_name = os.path.join(imgpath, filename)
+                if os.path.isfile(full_file_name):
+                    rename(imgpath, filename)
+                    current_process +=1
+            end_time = time.time()
+            self.textBrowser_3.append("%f"%(end_time-start_time))
+        except Exception as e:
+            self.textBrowser_2.append("%ss"%(e))
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
