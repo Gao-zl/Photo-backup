@@ -2,10 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0563196-df3d-4f77-8824-e74af2c6a298" name="默认" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/FPES9285.MP4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/IMG_0031.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/IMG_0032.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/IMG_8092.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg - 副本/IMG_8111.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg/2019/05/20190522_092122.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2019/05/20190522_092122.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2019/09/20190913_082009.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/04/20200429_004150.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/04/20200429_004151.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/05/20200504_211923.MP4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/05/20200505_122952.HEIC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/05/20200505_190820.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/05/20200506_020802 - 副本.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testImg2/2020/05/20200506_020802.JPG" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/base_library.zip" afterPath="$PROJECT_DIR$/build/main/base_library.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.exe" afterPath="$PROJECT_DIR$/dist/main.exe" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.MD" afterPath="$PROJECT_DIR$/README.MD" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backup_gui.py" afterPath="$PROJECT_DIR$/backup_gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backup_gui.ui" afterPath="$PROJECT_DIR$/backup_gui.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/warn-main.txt" afterPath="$PROJECT_DIR$/build/main/warn-main.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.ui" afterPath="$PROJECT_DIR$/gui.ui" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
@@ -24,7 +50,7 @@
     <SUITE FILE_PATH="coverage/Photo_backup$rename.coverage" NAME="rename Coverage Results" MODIFIED="1588738747387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Photo_backup$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1589011569212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Photo_backup$use_test_gui.coverage" NAME="use_test_gui Coverage Results" MODIFIED="1588936573496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
-    <SUITE FILE_PATH="coverage/Photo_backup$main.coverage" NAME="main Coverage Results" MODIFIED="1589012684856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Photo_backup$main.coverage" NAME="main Coverage Results" MODIFIED="1589032748580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Photo_backup$read_exif.coverage" NAME="read_exif Coverage Results" MODIFIED="1588738797359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Photo_backup$cuowu.coverage" NAME="cuowu Coverage Results" MODIFIED="1588944253034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
   </component>
@@ -33,36 +59,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="README.MD" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.MD">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="912">
-                  <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-152">
-                  <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+                <state relative-caret-position="325">
+                  <caret line="246" column="26" lean-forward="false" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
                   <folding>
-                    <element signature="e#346#355#0" expanded="true" />
+                    <element signature="e#367#376#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.MD" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.MD">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1102">
+                  <caret line="58" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -70,35 +84,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="147" column="12" lean-forward="false" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="37" />
+                <state relative-caret-position="322">
+                  <caret line="81" column="12" lean-forward="false" selection-start-line="81" selection-start-column="12" selection-end-line="82" selection-end-column="40" />
                   <folding>
-                    <element signature="e#346#355#0" expanded="true" />
+                    <element signature="e#367#376#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/gui.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="backup_gui.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backup_gui.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-97">
-                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -147,8 +141,8 @@
         <option value="$PROJECT_DIR$/GUI/cuowu.py" />
         <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/README.MD" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/README.MD" />
       </list>
     </option>
   </component>
@@ -183,6 +177,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,7 +192,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,10 +498,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16204691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16364606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -565,7 +559,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#346#355#0" expanded="true" />
+            <element signature="e#367#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,7 +617,7 @@
         <state relative-caret-position="719">
           <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
-            <element signature="e#346#355#0" expanded="true" />
+            <element signature="e#367#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -633,7 +627,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#346#355#0" expanded="true" />
+            <element signature="e#367#376#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -708,19 +702,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/tools/Lib/shutil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="198" column="37" lean-forward="true" selection-start-line="198" selection-start-column="37" selection-end-line="198" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,37 +723,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="247">
           <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backup_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
+        <state relative-caret-position="19">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.MD">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="325">
+          <caret line="246" column="26" lean-forward="false" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
           <folding>
-            <element signature="e#346#355#0" expanded="true" />
+            <element signature="e#367#376#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.MD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

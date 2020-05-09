@@ -13,6 +13,7 @@ Summary of the code:
     2020.05.08  v1.0
     2020.05.09  v1.1
     2020.05.09  v2.0
+    2020.05.09  v2.1
 """
 import os
 import tqdm
@@ -31,7 +32,7 @@ function：
     重命名主函数
 '''
 def rename(path, filename):
-
+    # 获取旧的照片名称：带照片的地址
     old_full_file_name = os.path.join(imgpath, filename)
     # 定义一个字典值后续使用
     FIELD = "EXIF DateTimeOriginal"
@@ -39,7 +40,7 @@ def rename(path, filename):
     tags = exifread.process_file(fd)
     fd.close()
 
-    # 有exif信息时
+    # 有exif信息时，即tags中存在FIELD字段，采用exif信息
     if FIELD in tags:
         # 改变数据的格式，加上原有的后缀名
         new_name = str(tags[FIELD]).replace(':', '').replace(' ', '_') + '_' + str(current_process)\
@@ -48,6 +49,7 @@ def rename(path, filename):
         new_full_file_name = os.path.join(imgpath, new_name)
 
         try:
+            # 系统的rename函数
             os.rename(old_full_file_name, new_full_file_name)
             # 输出结果
             w.textBrowser.append('[info]%d/%d   Success!   %s--->%s'%(current_process, total, filename, new_name))
@@ -77,6 +79,7 @@ def rename(path, filename):
             # 输出结果
             w.textBrowser.append(
                 '[info]%d/%d   Success!   %s--->%s' % (current_process, total, filename, new_name_without_exif))
+            # 实现实时刷新的功能
             QApplication.processEvents()
         except Exception as e:
             w.textBrowser_2.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
@@ -85,7 +88,7 @@ def rename(path, filename):
 
 '''
 function:
-    main
+    main for v0.1-0.2
 '''
 # if __name__ == '__main__':
 #
@@ -123,20 +126,27 @@ class mwindow(QWidget, Ui_Form):
 
     # 定义一个输入方法，将输入的信息获取下来
     def click_button(self):
+        # 清除原有的输出内容
         self.textBrowser.clear()
         self.textBrowser_2.clear()
         self.textBrowser_3.clear()
+        # 全局变量
         global imgpath, current_process, total, filename
+        # 当前处理的编号
         current_process = 1
+        # 文件夹下文件数量
         total = 1
+        # 获取输入的信息
         imgpath = self.lineEdit.text()
         self.textBrowser.append(imgpath)
 
 
         # 增加纠错机制v1.1
         try:
+            # 读取文件数量，作为全局变量total
             total = len([lists for lists in os.listdir(imgpath)])
             start_time = time.time()
+            # 循环读取一个个处理
             for filename in os.listdir(imgpath):
                 full_file_name = os.path.join(imgpath, filename)
                 if os.path.isfile(full_file_name):
@@ -145,14 +155,40 @@ class mwindow(QWidget, Ui_Form):
             end_time = time.time()
             self.textBrowser_3.append("%f"%(end_time-start_time))
         except Exception as e:
-            self.textBrowser_2.append("%ss"%(e))
+            self.textBrowser_2.append("%s"%(e))
 
     # 跳转到备份工具
     def change_to_backup(self):
         # 关闭前一个页面
         self.close()
-        # 开始备份
+        # 打开新的页面
         m2window.backup_gui(self)
+
+
+'''
+Summary:
+    判断文件夹是否存在,不存在即创建一个
+
+@time:
+    2020.05.09
+'''
+def make_path(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+
+'''
+Summary:
+    判断文件是否存在，并决定是否要移过去
+
+@time：
+    2020.05.09
+'''
+def move_photo(origin_full_file_name, backup_full_path):
+    try:
+        shutil.copy2(origin_full_file_name, backup_full_path)
+    except Exception as e:
+        print(e)
 
 
 '''
@@ -164,7 +200,7 @@ Summary:
 '''
 # 定义新类
 class m2window(QWidget, Ui_Dialog):
-    # 调用父类进行绘制图像
+    # 绘制gui
     def __init__(self):
         super(m2window, self).__init__()
         self.setupUi(self)
@@ -177,6 +213,10 @@ class m2window(QWidget, Ui_Dialog):
 
     # 开始执行备份操作
     def start_backup(self):
+        # 清除原有的输出，如果有的话
+        self.textBrowser.clear()
+        self.textBrowser_3.clear()
+        # 定义全局变量
         global origin_path, backup_path
         # 获取地址信息
         # 定义一个输入方法，将输入的信息保存下来
@@ -184,49 +224,36 @@ class m2window(QWidget, Ui_Dialog):
         origin_path = self.lineEdit.text()
         backup_path = self.lineEdit_2.text()
 
-        start_time2 = time.time()
-        for filename in os.listdir(origin_path):
-            # 获取照片的含地址的名称
-            origin_full_file_name = os.path.join(origin_path, filename)
-            if os.path.isfile(origin_full_file_name):
-                # 备份主函数
-                # 获取时间信息:日期和月份
-                year = filename.split('_')[0][:4]
-                month = filename.split('_')[0][4:6]
+        # v2.1新增内容：增加纠错机制
+        try:
+            total2 = len([lists for lists in os.listdir(origin_path)])
+            current2 = 1
+            start_time2 = time.time()
+            for filename in os.listdir(origin_path):
+                # 获取照片的含地址的名称
+                origin_full_file_name = os.path.join(origin_path, filename)
+                if os.path.isfile(origin_full_file_name):
+                    # 备份主函数
+                    # 获取时间信息:日期和月份
+                    year = filename.split('_')[0][:4]
+                    month = filename.split('_')[0][4:6]
 
-                # 构建完整目录并创建目录
-                backup_full_path = backup_path + '\\' + year + '\\' + month
-                make_path(backup_full_path)
+                    # 构建完整目录结构
+                    backup_full_path = backup_path + '\\' + year + '\\' + month
+                    make_path(backup_full_path)
 
-                move_photo(origin_full_file_name, backup_full_path)
-                self.textBrowser.append("%s\t-->\t%s\%s"%(filename, year,month))
-        end_time2 = time.time()
-        self.textBrowser.append("已存入备份文件夹：%s"%(backup_full_path))
-        self.textBrowser_3.append("%f"%(end_time2-start_time2))
-
-'''
-Summary:
-    判断文件夹是否存在
-
-@time:
-    2020.05.09
-'''
-def make_path(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-'''
-Summary:
-    判断文件是否存在，并决定是否要移过去
-    
-@time：
-    2020.05.09
-'''
-def move_photo(origin_full_file_name,backup_full_path):
-    try:
-        shutil.copy2(origin_full_file_name,backup_full_path)
-    except Exception as e:
-        print(e)
+                    # 移动照片到对应的文件夹下
+                    move_photo(origin_full_file_name, backup_full_path)
+                    # 输出信息
+                    self.textBrowser.append("[info]%d/%d  %s  -->  %s"%(current2, total2, filename, backup_full_path))
+                    # 实现实时刷新的功能
+                    QApplication.processEvents()
+                    current2 += 1
+            end_time2 = time.time()
+            self.textBrowser.append("[info]total%d 已存入备份文件夹：%s"%(total2, backup_full_path))
+            self.textBrowser_3.append("%f"%(end_time2-start_time2))
+        except Exception as e:
+            self.textBrowser.append("%s"%(e))
 
 
 if __name__ == '__main__':

@@ -21,9 +21,9 @@
 
     只需下载dist目录下main.exe即可使用
 
-    The operating environment is python3.x, and the libraries used are mainly exifread
-    The GUI framework is PyQt5
-    Just download main.exe in the dist directory to use
+    The operating environment is python3.x, and the libraries used are mainly exifread.
+    The GUI framework is PyQt5.
+    Just download main.exe in the dist directory to use
 
 
 ## Version:
@@ -48,6 +48,10 @@
     ### v2.0 实现照片备份功能（带GUI，入口在照片命名的下方）
              可以备份到自己需要的地方，不存在目录时自动创建
              用年份+月份的方式来进行备份
+
+    ### v2.1 实现纠错机制，输出程序无法执行原因
+             实时刷新机制
+             优化界面展示
 
 @author:
     Gao-zl
