@@ -1,5 +1,8 @@
 # Photo-backup
 
+## 最新版下载地址：
+    v2.1
+    https://gao-zl.lanzous.com/icfqtvi
 
 ## Background:
 
