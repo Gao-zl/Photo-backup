@@ -7,6 +7,7 @@
     由于本人常备份照片，而相机或手机导出的照片名称不够规范
     因此使用python写个小工具开发一款提取exif信息重新命名的小工具
     后续存储到对应日期目录下，进行备份
+
     In view of the fact that I often back up photos,
     and the names of the photos exported by the camera or mobile phone are not standardized,
     I used python to write a gadget to develop a renamed gadget,
@@ -16,9 +17,14 @@
 
 
     运行环境为python3.x，使用到的库主要为exifread
-    当然直接使用的话可以运行dist/main下的main.exe即可
+    GUI框架为PyQt5
+
+    只需下载dist目录下main.exe即可使用
+
     The operating environment is python3.x, and the libraries used are mainly exifread
-    Of course, if you use it directly, you can run main.exe under dist.
+    The GUI framework is PyQt5
+    Just download main.exe in the dist directory to use
+
 
 ## Version:
 
@@ -39,5 +45,10 @@
              新增实时更新机制，不会导致程序要卡一下才能输出
              优化界面展示
 
+    ### v2.0 实现照片备份功能（带GUI，入口在照片命名的下方）
+             可以备份到自己需要的地方，不存在目录时自动创建
+             用年份+月份的方式来进行备份
+
 @author:
     Gao-zl
+    2020

@@ -12,6 +12,7 @@ Summary of the code:
     2020.05.07  v0.2
     2020.05.08  v1.0
     2020.05.09  v1.1
+    2020.05.09  v2.0
 """
 import os
 import tqdm
@@ -21,6 +22,9 @@ import exifread
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from gui import Ui_Form
+from backup_gui import Ui_Dialog
+
+import shutil
 
 '''
 function：
@@ -143,11 +147,95 @@ class mwindow(QWidget, Ui_Form):
         except Exception as e:
             self.textBrowser_2.append("%ss"%(e))
 
+    # 跳转到备份工具
+    def change_to_backup(self):
+        # 关闭前一个页面
+        self.close()
+        # 开始备份
+        m2window.backup_gui(self)
+
+
+'''
+Summary:
+    Photo backup function
+
+@time:
+    2020.05.09
+'''
+# 定义新类
+class m2window(QWidget, Ui_Dialog):
+    # 调用父类进行绘制图像
+    def __init__(self):
+        super(m2window, self).__init__()
+        self.setupUi(self)
+
+    def backup_gui(self):
+        self.w2 = m2window()
+        self.w2.show()
+        self.w2.pushButton.clicked.connect(self.w2.start_backup)
+
+
+    # 开始执行备份操作
+    def start_backup(self):
+        global origin_path, backup_path
+        # 获取地址信息
+        # 定义一个输入方法，将输入的信息保存下来
+        # 在此处即为原照片地址信息和新照片地址信息
+        origin_path = self.lineEdit.text()
+        backup_path = self.lineEdit_2.text()
+
+        start_time2 = time.time()
+        for filename in os.listdir(origin_path):
+            # 获取照片的含地址的名称
+            origin_full_file_name = os.path.join(origin_path, filename)
+            if os.path.isfile(origin_full_file_name):
+                # 备份主函数
+                # 获取时间信息:日期和月份
+                year = filename.split('_')[0][:4]
+                month = filename.split('_')[0][4:6]
+
+                # 构建完整目录并创建目录
+                backup_full_path = backup_path + '\\' + year + '\\' + month
+                make_path(backup_full_path)
+
+                move_photo(origin_full_file_name, backup_full_path)
+                self.textBrowser.append("%s\t-->\t%s\%s"%(filename, year,month))
+        end_time2 = time.time()
+        self.textBrowser.append("已存入备份文件夹：%s"%(backup_full_path))
+        self.textBrowser_3.append("%f"%(end_time2-start_time2))
+
+'''
+Summary:
+    判断文件夹是否存在
+
+@time:
+    2020.05.09
+'''
+def make_path(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+'''
+Summary:
+    判断文件是否存在，并决定是否要移过去
+    
+@time：
+    2020.05.09
+'''
+def move_photo(origin_full_file_name,backup_full_path):
+    try:
+        shutil.copy2(origin_full_file_name,backup_full_path)
+    except Exception as e:
+        print(e)
+
 
 if __name__ == '__main__':
+
+    # 照片重命名功能模块
     app = QApplication(sys.argv)
     w = mwindow()
     # 将输入的给输出来
     w.pushButton.clicked.connect(w.click_button)
+    w.pushButton_2.clicked.connect(w.change_to_backup)
     w.show()
     sys.exit(app.exec_())
