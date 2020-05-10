@@ -14,6 +14,7 @@ Summary of the code:
     2020.05.09  v1.1
     2020.05.09  v2.0
     2020.05.09  v2.1
+    2020.05.10  v2.2
 """
 import os
 import tqdm
@@ -82,7 +83,8 @@ def rename(path, filename):
             # 实现实时刷新的功能
             QApplication.processEvents()
         except Exception as e:
-            w.textBrowser_2.append('[info]%d/%d   Failed!    %s'%(current_process, total, e))
+            w.textBrowser_2.append('================错误提示信息================'
+                                   '[info]%d/%d   Failed!    %s'%(current_process, total, e))
             QApplication.processEvents()
 
 
@@ -129,7 +131,7 @@ class mwindow(QWidget, Ui_Form):
         # 清除原有的输出内容
         self.textBrowser.clear()
         self.textBrowser_2.clear()
-        self.textBrowser_3.clear()
+        # self.textBrowser_3.clear()
         # 全局变量
         global imgpath, current_process, total, filename
         # 当前处理的编号
@@ -153,14 +155,17 @@ class mwindow(QWidget, Ui_Form):
                     rename(imgpath, filename)
                     current_process +=1
             end_time = time.time()
-            self.textBrowser_3.append("%f"%(end_time-start_time))
+            self.textBrowser.append("================================"
+                                    "\n完成！程序运行时间为：%f 秒"%(end_time-start_time))
         except Exception as e:
-            self.textBrowser_2.append("%s"%(e))
+            self.textBrowser_2.append("================错误提示信息================\n"
+                                      "%s"%(e))
 
     # 跳转到备份工具
     def change_to_backup(self):
-        # 关闭前一个页面
-        self.close()
+        # v2.2取消关闭页面，可同时运行
+        # # 关闭前一个页面
+        # self.close()
         # 打开新的页面
         m2window.backup_gui(self)
 
@@ -215,7 +220,7 @@ class m2window(QWidget, Ui_Dialog):
     def start_backup(self):
         # 清除原有的输出，如果有的话
         self.textBrowser.clear()
-        self.textBrowser_3.clear()
+        # self.textBrowser_3.clear()
         # 定义全局变量
         global origin_path, backup_path
         # 获取地址信息
@@ -250,10 +255,12 @@ class m2window(QWidget, Ui_Dialog):
                     QApplication.processEvents()
                     current2 += 1
             end_time2 = time.time()
-            self.textBrowser.append("[info]total%d 已存入备份文件夹：%s"%(total2, backup_full_path))
-            self.textBrowser_3.append("%f"%(end_time2-start_time2))
+            self.textBrowser.append("[info] total：%d 已存入备份文件夹：%s"%(total2, backup_path))
+            self.textBrowser.append("================================"
+                                    "\n完成！程序运行时间为：%f 秒"%(end_time2-start_time2))
         except Exception as e:
-            self.textBrowser.append("%s"%(e))
+            self.textBrowser.append("================错误提示信息================\n"
+                                    "%s"%(e))
 
 
 if __name__ == '__main__':
