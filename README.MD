@@ -2,7 +2,7 @@
 
 ## 最新版下载地址：
     v2.2
-    <https://gao-zl.lanzous.com/icg4dbg>
+    https://gao-zl.lanzous.com/icg4dbg
 
 ## Background:
 
